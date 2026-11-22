@@ -3,57 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riwayat Hidup - Hanzelni Rohmatika</title>
+<title>Biodata - Hanzelni Rohmatika</title>
 <style>
 *{box-sizing:border-box}
-body{font-family:Arial,sans-serif;margin:0;padding:20px;background:linear-gradient(45deg,#ff9a9e,#fad0c4,#fbc2eb,#a6c1ee);background-size:300% 300%;animation:grad 8s ease infinite}
-@keyframes grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.card{max-width:600px;background:white;margin:auto;padding:30px;border-radius:25px;box-shadow:0 10px 30px rgba(0,0,0,0.15);animation:muncul 1s ease}
-@keyframes muncul{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.top{text-align:center}
-.top img{width:165px;height:165px;border-radius:50%;object-fit:cover;border:5px solid #ff8fab;animation:melayang 3s ease-in-out infinite}
-@keyframes melayang{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.top h1{margin:12px 0 5px;animation:muncul 1.2s ease}.top p{color:#d63384;font-weight:bold}
-h2{color:#d63384;border-bottom:2px solid #ffeef5;padding-bottom:5px;margin-top:35px;animation:geser 1s ease}
-@keyframes geser{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
-table{width:100%;line-height:2}table td:first-child{width:130px;color:#999}
-.foto-item{background:#fff5f8;border-radius:20px;padding:15px;margin-top:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,0.08);animation:slideBawah .8s ease;transition:0.3s}
-.foto-item:hover{transform:scale(1.03)}
-@keyframes slideBawah{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
-.foto-item img{width:100%;max-height:380px;object-fit:cover;border-radius:15px;transition:0.3s}
-.foto-item img:hover{transform:scale(1.02)}
-.foto-item h3{margin:12px 0 5px}.foto-item p{margin:0;color:#666;line-height:1.6;font-size:14px}
-ul{line-height:1.9;color:#444}
-li{transition:0.3s}li:hover{transform:translateX(8px);color:#d63384;font-weight:bold}
+body{font-family:Arial,sans-serif;margin:0;padding:20px;background:linear-gradient(135deg,#ff9a9e,#fad0c4);text-align:center}
+.card{max-width:600px;background:white;margin:auto;padding:25px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.15)}
+.top img{width:150px;height:150px;object-fit:cover;border-radius:50%;border:4px solid #ff6b81}
+h1{margin:10px 0 5px;color:#333}
+p{color:#666;line-height:1.6}
+table{width:100%;text-align:left;margin-top:15px;border-collapse:collapse}
+td{padding:10px;border-bottom:1px solid #eee}
+td:first-child{font-weight:bold;width:130px;color:#ff6b81}
+.foto{display:flex;gap:10px;justify-content:center;margin-top:15px}
+.foto img{width:30%;border-radius:15px;height:110px;object-fit:cover}
 </style>
 </head>
 <body>
 <div class="card">
-<div class="top"><img src="foto.jpg"><h1>Hanzelni Rohmatika</h1><p>✨ RIWAYAT HIDUP ✨</p></div>
-
-<h2>📋 Biodata Diri</h2>
+<div class="top">
+<img src="profil.jpg" alt="Foto Profil">
+<h1>Hanzelni Rohmatika</h1>
+<p>Halo! Ini adalah biodata diri saya.</p>
+</div>
 <table>
-<tr><td>Nama</td><td>: Hanzelni Rohmatika</td></tr>
-<tr><td>Alamat</td><td>: Bengkulu</td></tr>
-<tr><td>Status</td><td>: Mahasiswa</td></tr>
-<tr><td>Organisasi</td><td>: HIMSI - Minat Bakat Badminton</td></tr>
+<tr><td>Nama</td><td>Hanzelni Rohmatika</td></tr>
+<tr><td>Hobi</td><td>Mendengarkan musik & Jalan-jalan</td></tr>
+<tr><td>Makanan Favorit</td><td>Seblak & Mie Ayam</td></tr>
+<tr><td>Film Favorit</td><td>Film Drama & Komedi</td></tr>
 </table>
-
-<h2>😊 Muka Saya</h2>
-<div class="foto-item"><img src="muka.jpg"><h3>Ini Muka Saya</h3><p>Tulis disini tentang diri kamu.</p></div>
-
-<h2>🏸 Hobi Saya</h2>
-<div class="foto-item"><img src="hobi.jpg"><h3>Badminton</h3><p>Tulis disini tentang hobi kamu.</p></div>
-
-<h2>🍔 Makanan Kesukaan</h2>
-<div class="foto-item"><img src="makanan.jpg"><h3>Isi Nama Makanan</h3><p>Tulis disini kenapa suka makanan ini.</p></div>
-
-<h2>🎬 Film Kesukaan</h2>
-<div class="foto-item"><img src="film.jpg"><h3>Isi Judul Film</h3><p>Tulis disini tentang film ini.</p></div>
-
-<h2>📸 Galeri Foto</h2>
-<div class="foto-item"><img src="foto1.jpg"><h3>Foto Saya</h3><p>Tulis cerita foto ini.</p></div>
-
+<div class="foto">
+<img src="hobi.jpg" alt="Hobi">
+<img src="makanan.jpg" alt="Makanan">
+<img src="film.jpg" alt="Film">
+</div>
+<p>Terima kasih sudah mampir! 💖</p>
 </div>
 </body>
 </html>

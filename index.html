@@ -1,42 +1,73 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biodata - Hanzelni Rohmatika</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-*{box-sizing:border-box}
-body{font-family:Arial,sans-serif;margin:0;padding:20px;background:linear-gradient(135deg,#ff9a9e,#fad0c4);text-align:center}
-.card{max-width:600px;background:white;margin:auto;padding:25px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.15)}
-.top img{width:150px;height:150px;object-fit:cover;border-radius:50%;border:4px solid #ff6b81}
-h1{margin:10px 0 5px;color:#333}
-p{color:#666;line-height:1.6}
-table{width:100%;text-align:left;margin-top:15px;border-collapse:collapse}
-td{padding:10px;border-bottom:1px solid #eee}
-td:first-child{font-weight:bold;width:130px;color:#ff6b81}
-.foto{display:flex;gap:10px;justify-content:center;margin-top:15px}
-.foto img{width:30%;border-radius:15px;height:110px;object-fit:cover}
+body { margin:0; font-family: sans-serif; background:#ffc9c9; }
+.header {
+  position: sticky; top:0; background:#ff8fa3; color:white;
+  text-align:center; padding:15px; font-weight:bold; z-index:10;
+}
+.card { background:white; margin:20px; padding:20px; border-radius:20px; text-align:center; }
+.card img { width:150px; height:150px; object-fit:cover; border-radius:50%; animation: melayang 2s infinite; }
+@keyframes melayang { 0%,100%{ transform:translateY(0)} 50%{ transform:translateY(-10px)} }
+.galeri img { width:100%; border-radius:15px; margin-top:15px; }
+
+/* Animasi scroll */
+.reveal { opacity:0; transition: all 0.8s; }
+.dari-kiri { transform: translateX(-100px); }
+.dari-kanan { transform: translateX(100px); }
+.dari-bawah { transform: translateY(80px); }
+.ngezoom { transform: scale(0.5); }
+.muter { transform: rotate(-10deg) scale(0.7); }
+.muncul { opacity:1; transform:none; }
 </style>
 </head>
 <body>
+
+<div class="header">Hanzelni Rohmatika ❤️</div>
+
 <div class="card">
-<div class="top">
-<img src="foto jpg.jpg" alt="Foto Profil">
-<h1>Hanzelni Rohmatika</h1>
-<p>Halo! Ini adalah biodata diri saya.</p>
+  <img src="foto-kamu.jpg">
+  <h2>Hanzelni Rohmatika</h2>
+  <p>Halo! Ini adalah biodata saya</p>
+  <p><b>Hobi:</b> Mendengarkan musik & Jalan-jalan</p>
+  <p><b>Makanan Favorit:</b> Seblak & Mie Ayam</p>
+  <p><b>Film Favorit:</b> Film Drama & Komedi</p>
 </div>
-<table>
-<tr><td>Nama</td><td>Hanzelni Rohmatika</td></tr>
-<tr><td>Hobi</td><td>Mendengarkan musik & Jalan-jalan</td></tr>
-<tr><td>Makanan Favorit</td><td>Seblak & Mie Ayam</td></tr>
-<tr><td>Film Favorit</td><td>Film Drama & Komedi</td></tr>
-</table>
-<div class="foto">
-<img src="hobi.jpg" alt="Hobi">
-<img src="makanan.jpg" alt="Makanan">
-<img src="flim.jpg" alt="Film">
+
+<div class="card galeri reveal dari-kiri">
+  <h3>Foto 1 - Muncul dari Kiri</h3>
+  <img src="foto1.jpg">
 </div>
-<p>Terima kasih sudah mampir! 💖</p>
+
+<div class="card galeri reveal dari-kanan">
+  <h3>Foto 2 - Muncul dari Kanan</h3>
+  <img src="foto2.jpg">
 </div>
+
+<div class="card galeri reveal ngezoom">
+  <h3>Foto 3 - Muncul Nge-Zoom</h3>
+  <img src="foto3.jpg">
+</div>
+
+<div class="card galeri reveal muter">
+  <h3>Foto 4 - Muncul Sambil Muter</h3>
+  <img src="foto4.jpg">
+</div>
+
+<div class="card galeri reveal dari-bawah">
+  <h3>Terima kasih sudah mampir ❤️</h3>
+</div>
+
+<script>
+let semua = document.querySelectorAll('.reveal');
+let pengamat = new IntersectionObserver((e)=>{
+  e.forEach(item=>{
+    if(item.isIntersecting){ item.target.classList.add('muncul'); }
+  });
+});
+semua.forEach(el=> pengamat.observe(el));
+</script>
 </body>
 </html>

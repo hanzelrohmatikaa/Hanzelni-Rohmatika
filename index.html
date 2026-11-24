@@ -166,7 +166,7 @@ nav a:hover{color:#ec4899}
 <button id="keatas" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-let teks=["Halo, kenalin aku Hanzelni! ✨","Aku suka musik & jalan-jalan 🎧","Team Seblak & Mie Ayam 🍜","Suka nonton Drama & Komedi 🎬","Mahasiswa | Palembang 📍"];
+let teks=["Halo, kenalin aku Hanzelni! ✨","Aku suka musik & jalan-jalan 🎧","Team Seblak & Mie Ayam 🍜","Suka nonton Drama & Komedi 🎬","Mahasiswa | Bengkulu 📍"];
 let i=0,j=0,hapus=false;
 function ketik(){let el=document.getElementById('ketik');let kata=teks[i];if(!hapus){j++;el.textContent=kata.slice(0,j);if(j==kata.length){hapus=true;setTimeout(ketik,1500);return;}}else{j--;el.textContent=kata.slice(0,j);if(j==0){hapus=false;i=(i+1)%teks.length;}}setTimeout(ketik,hapus?30:70);}ketik();
 let semua=document.querySelectorAll('.reveal');let obs=new IntersectionObserver((e)=>{e.forEach(item=>{if(item.isIntersecting){item.target.classList.add('muncul');item.target.querySelectorAll('.isi').forEach(b=>b.style.width=b.dataset.width);}})},{threshold:0.2});semua.forEach(el=>obs.observe(el));

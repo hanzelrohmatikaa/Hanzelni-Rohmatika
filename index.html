@@ -9,18 +9,23 @@ body { margin:0; font-family: sans-serif; background:#ffc9c9; }
 .header {
   position: sticky; top:0; background:#ff8fa3; color:white;
   text-align:center; padding:15px; font-weight:bold; z-index:10;
+  animation: goyang 1.5s infinite;
 }
-.card { background:white; margin:20px; padding:20px; border-radius:20px; text-align:center; overflow:hidden; }
-.foto-profil { width:150px; height:150px; object-fit:cover; border-radius:50%; animation: melayang 2s infinite; }
-.galeri img { width:100%; height:auto; display:block; border-radius:15px; margin-top:15px; }
-@keyframes melayang { 0%,100%{ transform:translateY(0)} 50%{ transform:translateY(-10px)} }
-.reveal { opacity:0; transition: all 0.8s ease; }
-.dari-kiri { transform: translateX(-100px); }
-.dari-kanan { transform: translateX(100px); }
-.dari-bawah { transform: translateY(80px); }
-.ngezoom { transform: scale(0.5); }
-.muter { transform: rotate(-10deg) scale(0.7); }
-.muncul { opacity:1; transform:none; }
+@keyframes goyang { 0%,100%{ transform:scale(1)} 50%{ transform:scale(1.03)} }
+.card { background:white; margin:20px; padding:20px; border-radius:20px; text-align:center; overflow:hidden; animation: naik 0.8s ease; }
+@keyframes naik { from{ opacity:0; transform:translateY(50px)} to{ opacity:1; transform:translateY(0)} }
+.foto-profil { width:150px; height:150px; object-fit:cover; border-radius:50%; animation: melayang 1.5s infinite; }
+@keyframes melayang { 0%,100%{ transform:translateY(0) rotate(-2deg)} 50%{ transform:translateY(-12px) rotate(2deg)} }
+.galeri img { width:100%; height:auto; display:block; border-radius:15px; margin-top:15px; animation: kedip 2s infinite; }
+@keyframes kedip { 0%,100%{ transform:scale(1)} 50%{ transform:scale(1.02)} }
+
+/* Animasi scroll */
+.reveal { opacity:0; transition: all 0.6s ease; }
+.dari-kiri { transform: translateX(-150px) rotate(-5deg); }
+.dari-kanan { transform: translateX(150px) rotate(5deg); }
+.ngezoom { transform: scale(0.3); }
+.dari-bawah { transform: translateY(100px); }
+.muncul { opacity:1 !important; transform:none !important; }
 </style>
 </head>
 <body>
@@ -29,6 +34,7 @@ body { margin:0; font-family: sans-serif; background:#ffc9c9; }
 
 <div class="wrap">
 
+<!-- 1. FOTO -->
 <div class="card">
   <img class="foto-profil" src="foto.jpg.jpg">
   <h2>Hanzelni Rohmatika</h2>
@@ -39,24 +45,25 @@ body { margin:0; font-family: sans-serif; background:#ffc9c9; }
   <p>❤️</p>
 </div>
 
+<!-- 2. HOBI -->
 <div class="card galeri reveal dari-kiri">
   <h3>Hobi Aku</h3>
   <img src="hobi.jpg">
+  <p>Mendengarkan musik & Jalan-jalan</p>
 </div>
 
+<!-- 3. MAKANAN -->
 <div class="card galeri reveal dari-kanan">
   <h3>Makanan Favorit Aku</h3>
   <img src="makanan.jpg">
+  <p>Seblak & Mie Ayam</p>
 </div>
 
+<!-- 4. FILM -->
 <div class="card galeri reveal ngezoom">
   <h3>Film Favorit Aku</h3>
   <img src="film.jpg">
-</div>
-
-<div class="card galeri reveal muter">
-  <h3>Foto Aku Lagi</h3>
-  <img src="foto.jpg.jpg">
+  <p>Film Drama & Komedi</p>
 </div>
 
 <div class="card galeri reveal dari-bawah">
@@ -71,8 +78,9 @@ let pengamat = new IntersectionObserver((e)=>{
   e.forEach(item=>{
     if(item.isIntersecting){ item.target.classList.add('muncul'); }
   });
-});
+}, { threshold: 0.1 });
 semua.forEach(el=> pengamat.observe(el));
+setTimeout(()=>{ semua.forEach(el=> el.classList.add('muncul')); }, 3000);
 </script>
 </body>
 </html>

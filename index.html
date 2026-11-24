@@ -119,23 +119,22 @@ nav a:hover{color:#ec4899}
   <div class="card reveal">
     <h2>🎓 Riwayat Pendidikan</h2>
     <div class="timeline">
-      <div><b>SD - kaur</b><p>Lulus dengan happy, suka jajan di kantin</p></div>
-      <div><b>SMP - kaur</b><p>Mulai suka musik & nonton drama</p></div>
-      <div><b>SMA - kaur</b><p>Mulai suka jalan-jalan & kulineran</p></div>
+      <div><b>SD - kaur</b><p>masih malas malasan</p></div>
+      <div><b>SMP - kaur</b><p>Mulai suka mencari tau tentang hal hal yang beum ku tau</p></div>
+      <div><b>SMK - kaur</b><p>Mulai mulai fokus membangun jati diri dan terus memperbaiki diri</p></div>
       <div><b>Kuliah - bengkulu 📚</b><p>Lagi berjuang bikin CV ini biar keren!</p></div>
     </div>
   </div>
 
   <!-- HOBI - 2 -->
-  <div class="card reveal dari-kiri" id="hobi"><h2>🎧 Hobi Aku</h2><img class="foto-galeri" src="hobi.jpg"><span class="chip">Mendengarkan Musik</span><span class="chip">Jalan-jalan</span><p style="margin-top:10px">Musik bikin tenang, jalan-jalan bikin happy!</p></div>
+  <div class="card reveal dari-kiri" id="hobi"><h2>🎧 Hobi Aku</h2><img class="foto-galeri" src="hobi.jpg"><span class="chip">Mendengarkan Musik</span><span class="chip">suka hujan juga</span><p style="margin-top:10px">aku sangat suka musikapalagi diiringi suara hujan</p></div>
 
   <!-- MAKANAN - 3 -->
-  <div class="card reveal dari-kanan" id="makanan"><h2>🍜 Makanan Favorit Aku</h2><img class="foto-galeri" src="makanan.jpg"><span class="chip">Seblak</span><span class="chip">Mie Ayam</span><p style="margin-top:10px">Paling gak bisa nolak kalau udah pedes-pedes gurih!</p></div>
+  <div class="card reveal dari-kanan" id="makanan"><h2>🍜 Makanan Favorit Aku</h2><img class="foto-galeri" src="makanan.jpg"><span class="chip">Seblak</span><span class="chip"></span><p style="margin-top:10px">aku sangat suka sebak,tapi aku gk boleh makan banyak</p></div>
 
-  <!-- FILM - 4 -->
-  <div class="card reveal ngezoom" id="film"><h2>🎬 Film Favorit Aku</h2><img class="foto-galeri" src="flim.jpg"><span class="chip">Drama</span><span class="chip">Komedi</span><p style="margin-top:10px">Kalau sedih nonton drama, kalau pengen ketawa nonton komedi.</p></div>
+  <div class="card reveal ngezoom" id="film"><h2>🎬 Film Favorit Aku</h2><img class="foto-galeri" src="flim.jpg"><span class="chip">Drama korea</span><span class="chip"></span><p style="margin-top:10px"></p>aku suka drama ini karna mengangkat makna tentang keluar dari isolasi sosial,penyembuhan luka batin,dan keberanian membuka  diri terhadap dunia luar</div>
 
-  <!-- PORTFOLIO GRID ala Hafizh + Wildan -->
+   <!-- PORTFOLIO GRID ala Hafizh + Wildan -->
   <div class="card reveal">
     <h2>💼 Portfolio / Karya Aku</h2>
     <div class="grid">
@@ -166,7 +165,7 @@ nav a:hover{color:#ec4899}
 <button id="keatas" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-let teks=["Halo, kenalin aku Hanzelni! ✨","Aku suka musik & jalan-jalan 🎧","Team Seblak & Mie Ayam 🍜","Suka nonton Drama & Komedi 🎬","Mahasiswa | Bengkulu 📍"];
+let teks=["Halo, kenalin aku Hanzelni! ✨","Aku suka musik & jalan-jalan 🎧","aku suka seblak 🍜","Suka nonton Drama korea juga 🎬","Mahasiswa | Bengkulu 📍"];
 let i=0,j=0,hapus=false;
 function ketik(){let el=document.getElementById('ketik');let kata=teks[i];if(!hapus){j++;el.textContent=kata.slice(0,j);if(j==kata.length){hapus=true;setTimeout(ketik,1500);return;}}else{j--;el.textContent=kata.slice(0,j);if(j==0){hapus=false;i=(i+1)%teks.length;}}setTimeout(ketik,hapus?30:70);}ketik();
 let semua=document.querySelectorAll('.reveal');let obs=new IntersectionObserver((e)=>{e.forEach(item=>{if(item.isIntersecting){item.target.classList.add('muncul');item.target.querySelectorAll('.isi').forEach(b=>b.style.width=b.dataset.width);}})},{threshold:0.2});semua.forEach(el=>obs.observe(el));
